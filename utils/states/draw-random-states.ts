@@ -1,3 +1,3 @@
-export function drawRandomState(statesNames: string[]) {
-  return statesNames[Math.floor(Math.random() * statesNames.length)];
-}
+export const drawRandomState = (statesNames: string[]): string => statesNames[Math.floor(
+  Math.random() * statesNames.length,
+)];

@@ -1,6 +1,6 @@
 import { StatesApiResponse } from '../../types';
 
-export async function fetchStates(): Promise<StatesApiResponse> {
+export const fetchStates = async (): Promise<StatesApiResponse> => {
   const response = await fetch(
     'https://api.first.org/data/v1/countries',
     {
@@ -8,4 +8,4 @@ export async function fetchStates(): Promise<StatesApiResponse> {
     },
   );
   return response.json();
-}
+};

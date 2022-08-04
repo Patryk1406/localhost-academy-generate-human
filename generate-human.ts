@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import { v4 as uuid } from 'uuid';
+import { Person } from './types';
 import { createEMail } from './utils/create-email';
 import { fetchRandomFullName } from './utils/fetch-random-full-name';
 import { generateRandomAge } from './utils/generate-random-age';
@@ -8,7 +9,7 @@ import { drawRandomState } from './utils/states/draw-random-states';
 import { extractStatesNames } from './utils/states/extract-states-name';
 import { fetchStates } from './utils/states/fetch-states';
 
-async function generateHuman() {
+const generateHuman = async (): Promise<Person> => {
   const [firstName, lastName] = (await fetchRandomFullName()).split(' ');
   const statesInfo = await fetchStates();
   const statesNames = extractStatesNames(statesInfo);
@@ -21,7 +22,7 @@ async function generateHuman() {
     country: drawRandomState(statesNames),
     id: uuid(),
   };
-}
+};
 
 (async () => {
   console.log(await generateHuman());

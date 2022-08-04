@@ -1,3 +1,4 @@
-export function createEMail(firstName: string, lastName: string) {
-  return `${firstName.toLowerCase()}.${lastName.toLowerCase()}@gmail.com`;
-}
+export const createEMail = (
+  firstName: string,
+  lastName: string,
+): string => `${firstName.toLowerCase()}.${lastName.toLowerCase()}@gmail.com`;

@@ -1,4 +1,4 @@
-export async function fetchRandomFullName(): Promise<string> {
+export const fetchRandomFullName = async (): Promise<string> => {
   const response = await fetch('https://randommer.io/api/Name?nameType=fullname&quantity=1', {
     method: 'GET',
     headers: {
@@ -6,4 +6,4 @@ export async function fetchRandomFullName(): Promise<string> {
     },
   });
   return (await response.json())[0];
-}
+};

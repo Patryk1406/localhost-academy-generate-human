@@ -1,6 +1,7 @@
 import { StatesApiResponse } from '../../types';
 
-export function extractStatesNames(statesApiResponse: StatesApiResponse) {
-  return Object.entries(statesApiResponse.data)
-    .map((keyValuePair) => keyValuePair[1].country);
-}
+export const extractStatesNames = (statesApiResponse: StatesApiResponse): string[] => (
+  Object.entries(
+    statesApiResponse.data,
+  )
+    .map((keyValuePair) => keyValuePair[1].country));
